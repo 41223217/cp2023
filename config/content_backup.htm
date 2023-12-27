@@ -1065,7 +1065,7 @@ int main()
 
     return(0);
 }</pre>
-<p><img caption="false" height="303" src="/images/螢幕擷取畫面 2023-12-27 172017.jpg" width="800"/></p>
+<p><img caption="false" height="426" src="/images/螢幕擷取畫面 2023-12-27 172017.jpg" width="900"/></p>
 <p>4.<span>寫出C 程序，反向列印下列字元</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1083,7 +1083,7 @@ int main()
 
     return(0);
 }</pre>
-<p><span><img caption="false" height="300" src="/images/螢幕擷取畫面 2023-12-27 172552.jpg" width="934"/><br/></span></p>
+<p><span><img caption="false" height="320" src="/images/螢幕擷取畫面 2023-12-27 172552.jpg" width="1000"/><br/></span></p>
 <p>5.<span>寫出 C 程式來計算高7英吋、寬5英吋的矩形的周長和面積</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
 
@@ -1111,27 +1111,35 @@ int main() {
 
     return(0);
 }</pre>
-<p><img caption="false" height="359" src="/images/螢幕擷取畫面 2023-12-27 172931.jpg" width="800"/></p>
+<p><img caption="false" height="404" src="/images/螢幕擷取畫面 2023-12-27 172931.jpg" width="900"/></p>
 <p>6.寫出<span>C程式來計算半徑的圓的周長和面積</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+
+/* 
+   Variables to store the width and height of a rectangle in inches 
+*/
+int width;          
+int height;         
+
+int area;           /* Variable to store the area of the rectangle */
+int perimeter;      /* Variable to store the perimeter of the rectangle */
 
 int main() {
-   int radius;      /* Variable to store the radius of the circle */
-   float area, perimeter;    /* Variables to store the area and perimeter of the circle */ 
-   radius = 6;      /* Assigning a value to the radius */
+    /* Assigning values to height and width */
+	height = 7;
+	width = 5;
 
-   /* Calculating the perimeter of the circle */
-   perimeter = 2 * 3.14 * radius;
-   printf("Perimeter of the Circle = %f inches\n", perimeter);
+    /* Calculating the perimeter of the rectangle */
+    perimeter = 2*(height + width);
+	printf("Perimeter of the rectangle = %d inches\n", perimeter);
 	
-   /* Calculating the area of the circle */
-   area = 3.14 * radius * radius;
-   printf("Area of the Circle = %f square inches\n", area);
+    /* Calculating the area of the rectangle */
+	area = height * width;
+	printf("Area of the rectangle = %d square inches\n", area);
 
-   return(0);
-}
-Explanation:</pre>
-<p><img caption="false" height="300" src="/images/螢幕擷取畫面 2023-12-27 173557.jpg" width="1013"/></p>
+    return(0);
+}</pre>
+<p><img caption="false" height="450" src="/images/螢幕擷取畫面 2023-12-27 173557.jpg" width="900"/></p>
 <p>7.<span>寫出C程式來顯示多個變數</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1159,7 +1167,7 @@ int main()
 
     return 0;
 }</pre>
-<p><img caption="false" height="383" src="/images/螢幕擷取畫面 2023-12-27 173756.jpg" width="800"/></p>
+<p><img caption="false" height="431" src="/images/螢幕擷取畫面 2023-12-27 173756.jpg" width="900"/></p>
 <p>8.<span>編輯一個C程式，將指定的日期轉換為年、週和日</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1181,7 +1189,7 @@ int main()
 
     return 0;
 }</pre>
-<p><img caption="false" height="319" src="/images/螢幕擷取畫面 2023-12-27 174116.jpg" width="800"/></p>
+<p><img caption="false" height="399" src="/images/螢幕擷取畫面 2023-12-27 174116.jpg" width="1000"/></p>
 <p>9.<span>寫出C程式，接受使用者提供的兩個整數加以計算這兩個整數的和(修改過後的C程式</span><span>)</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -1211,7 +1219,7 @@ int main() {
     return 0;
 }
 </pre>
-<p><img caption="false" height="391" src="/images/螢幕擷取畫面 2023-12-27 175456.jpg" width="800"/></p>
+<p><img caption="false" height="440" src="/images/螢幕擷取畫面 2023-12-27 175456.jpg" width="900"/></p>
 <p>10.<span>寫出</span><span>C程式，使用我提供的兩個整數加以計算這兩個整數的乘積(修改過後的C程式<span>)</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -1240,7 +1248,7 @@ int main() {
  
     return 0;
 }</pre>
-<p><img alt="" height="311" src="/images/螢幕擷取畫面 2023-12-27 181723.png" width="800"/></p>
+<p><img caption="false" height="389" src="/images/螢幕擷取畫面 2023-12-27 181723.png" width="1000"/></p>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
