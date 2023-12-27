@@ -142,72 +142,274 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>w12</h1>
-<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">  #include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>練習一</h1>
+<p>1.寫出<span>C程式來印出姓名、出生日期和電話號碼</span></p>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{
+    // Print Name
+    printf("Name   : Eric Wu\n"); 
+
+    // Print Date of Birth
+    printf("DOB    : Dec 21, 2023\n"); 
+
+    // Print Mobile Number
+    printf("Mobile : 03-6969669\n"); 
+
+    // Indicate successful execution
+    return(0); 
+}</pre>
+<p><img alt="" height="264" src="./../images/螢幕擷取畫面 2023-12-21 141201.png" width="400"/></p>
+<p>2.<span>寫出一個C程式來得知目前在使用的C版本</span></p>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+    // Check for C standard version
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("We are using C17!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("We are using C11!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("We are using C99!\n");
+    #else
+        printf("We are using C89/C90!\n");
+    #endif
+
+    // Indicate successful execution
+    return 0;
+}</pre>
+<p><img alt="" height="162" src="./../images/螢幕擷取畫面 2023-12-21 144242.png" width="400"/></p>
+<p>3.寫出<span>C 程序，使用#列印一個區塊F，F的高度為6個字符，寬度為5個和4個字符。還印出一個大的字母C</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    // Print a line of hashes
+    printf("######\n");
+    
+    // Print a single hash
+    printf("#\n");
+    
+    // Print a single hash
+    printf("#\n");
+    
+    // Print a line of hashes
+    printf("#####\n");
+    
+    // Print a single hash
+    printf("#\n");
+    
+    // Print a single hash
+    printf("#\n");
+    
+    // Print a single hash
+    printf("#\n");
+
+    return(0);
+}</pre>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    // Print top line of pattern
+    printf("    ######\n");
+    
+    // Print second line of pattern
+    printf("  ##      ##\n");
+    
+    // Print lines 3 to 7 of pattern
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    
+    // Print bottom line of pattern
+    printf("  ##      ##\n");
+    
+    // Print last line of pattern
+    printf("    ######\n");
+
+    return(0);
+}</pre>
+<p><img alt="" height="151" src="./../images/螢幕擷取畫面 2023-12-27 172017.jpg" width="400"/></p>
+<p>4.<span>寫出C 程序，反向列印下列字元</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    // Declare and initialize character variables
+    char char1 = 'X';
+    char char2 = 'M';
+    char char3 = 'L';
+
+    // Print the original and reversed characters
+    printf("The reverse of %c%c%c is %c%c%c\n",
+        char1, char2, char3,
+        char3, char2, char1);
+
+    return(0);
+}</pre>
+<p><span><img alt="" height="161" src="./../images/螢幕擷取畫面 2023-12-27 172552.jpg" width="500"/><br/></span></p>
+<p>5.<span>寫出 C 程式來計算高7英吋、寬5英吋的矩形的周長和面積</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+
+/* 
+   Variables to store the width and height of a rectangle in inches 
+*/
+int width;          
+int height;         
+
+int area;           /* Variable to store the area of the rectangle */
+int perimeter;      /* Variable to store the perimeter of the rectangle */
 
 int main() {
-    int width = 800;
-    int height = 600;
+    /* Assigning values to height and width */
+	height = 7;
+	width = 5;
 
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(img, 0);
+    /* Calculating the perimeter of the rectangle */
+    perimeter = 2*(height + width);
+	printf("Perimeter of the rectangle = %d inches\n", perimeter);
+	
+    /* Calculating the area of the rectangle */
+	area = height * width;
+	printf("Area of the rectangle = %d square inches\n", area);
 
-    FILE *outputFile = fopen("hellogd.png", "wb");
-    if (outputFile == NULL) {
+    return(0);
+}</pre>
+<p><img alt="" height="224" src="./../images/螢幕擷取畫面 2023-12-27 172931.jpg" width="500"/></p>
+<p>6.寫出<span>C程式來計算半徑的圓的周長和面積</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-fprintf(stderr, "Error opening the output file.\n");
+int main() {
+   int radius;      /* Variable to store the radius of the circle */
+   float area, perimeter;    /* Variables to store the area and perimeter of the circle */ 
+   radius = 6;      /* Assigning a value to the radius */
 
-return 1;
+   /* Calculating the perimeter of the circle */
+   perimeter = 2 * 3.14 * radius;
+   printf("Perimeter of the Circle = %f inches\n", perimeter);
+	
+   /* Calculating the area of the circle */
+   area = 3.14 * radius * radius;
+   printf("Area of the Circle = %f square inches\n", area);
+
+   return(0);
+}
+Explanation:</pre>
+<p><img alt="" height="148" src="./../images/螢幕擷取畫面 2023-12-27 173557.jpg" width="500"/></p>
+<p>7.<span>寫出C程式來顯示多個變數</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 125, b = 12345;        /* Declare and initialize integer variables */
+    long ax = 1234567890;          /* Declare and initialize long integer variable */
+    short s = 4043;                /* Declare and initialize short integer variable */
+    float x = 2.13459;             /* Declare and initialize floating-point variable */
+    double dx = 1.1415927;         /* Declare and initialize double precision variable */
+    char c = 'W';                  /* Declare and initialize character variable */
+    unsigned long ux = 2541567890; /* Declare and initialize unsigned long integer variable */
+
+    /* Various arithmetic operations and type conversions */
+    printf("a + c =  %d\n", a + c);
+    printf("x + c = %f\n", x + c);
+    printf("dx + x = %f\n", dx + x);
+    printf("((int) dx) + ax =  %ld\n", ((int) dx) + ax);
+    printf("a + x = %f\n", a + x);
+    printf("s + b =  %d\n", s + b);
+    printf("ax + b = %ld\n", ax + b);
+    printf("s + c =  %hd\n", s + c);
+    printf("ax + c = %ld\n", ax + c);
+    printf("ax + ux = %lu\n", ax + ux);
+
+    return 0;
+}</pre>
+<p><img alt="" height="239" src="./../images/螢幕擷取畫面 2023-12-27 173756.jpg" width="500"/></p>
+<p>8.<span>編輯一個C程式，將指定的日期轉換為年、週和日</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // Total number of days
+
+    // Converts days to years, weeks and days
+    years = days/365; // Calculate years
+    weeks = (days % 365)/7; // Calculate weeks
+    days = days - ((years*365) + (weeks*7)); // Calculate remaining days
+
+    // Print the results
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}</pre>
+<p><img alt="" height="199" src="./../images/螢幕擷取畫面 2023-12-27 174116.jpg" width="500"/></p>
+<p>9.<span>寫出C程式，接受使用者提供的兩個整數加以計算這兩個整數的和(修改過後的C程式</span><span>)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int x, y;
+    int result1, result2; // 用于存储 scanf 的返回值
+ 
+    // 获取第一个整数
+    printf("Input the first integer: ");
+    result1 = scanf("%d", &amp;x);
+    if (result1 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
     }
-
-    int red = gdImageColorAllocate(img, 255, 0, 0);
-    int blue = gdImageColorAllocate(img, 0, 0, 255);
-    int black = gdImageColorAllocate(img, 0, 0, 0);
-    int white = gdImageColorAllocate(img, 255, 255, 255);
-    // 長方形塗色
-    gdImageFilledRectangle(img, 0, 0, width, height, white);
-    gdImageFilledRectangle(img, 0, 0, (int)width/4, (int)height/4, blue);
-    // 橢圓形塗色
-    gdImageFilledEllipse(img, (int)width*3/4, (int)height/4, (int)width/4, (int)width/4, red);
-    // 橢圓形畫線
-    gdImageEllipse(img, (int)width*3/4, (int)height*3/4, (int)width/4, (int)width/4, red);
-    // 畫直線
-    gdImageLine(img, (int)width/2, (int)height/2, (int)width/2, (int)height/2 + 100, blue);
-
-    // 多邊形畫線
-    gdPoint points[4];
-    points[0].x = (int)width/4;
-    points[0].y = (int)height*3/4;
-    points[1].x = points[0].x + 100;
-    points[1].y = points[0].y;
-    points[2].x = points[1].x;
-    points[2].y = points[1].y + 100;
-    points[3].x = points[2].x - 100;
-    points[3].y = points[2].y;
-    gdImagePolygon(img, points, 4, black);
-
-    // 多邊形塗色
-    gdPoint points2[4];
-    points2[0].x = (int)width/3;
-    points2[0].y = (int)height/2;
-    points2[1].x = points2[0].x + 100;
-    points2[1].y = points2[0].y;
-    points2[2].x = points2[1].x;
-    points2[2].y = points2[1].y + 100;
-    points2[3].x = points2[2].x - 150;
-    points2[3].y = points2[2].y;
-    gdImageFilledPolygon(img, points2, 4, red);
-
-    gdImagePngEx(img, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(img);
+ 
+    // 获取第二个整数
+    printf("Input the second integer: ");
+    result2 = scanf("%d", &amp;y);
+    if (result2 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+ 
+    // 计算并输出它们的和
+    printf("Sum of the two integers = %d\n", x + y);
+ 
     return 0;
 }
 </pre>
-<p><img alt="" height="421" src="./../images/w12.png" width="561"/></p>
-<br />w7 << <a href='w7.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
+<p><img alt="" height="244" src="./../images/螢幕擷取畫面 2023-12-27 175456.jpg" width="500"/></p>
+<p>10.<span>寫出</span><span>C程式，使用我提供的兩個整數加以計算這兩個整數的乘積(修改過後的C程式<span>)</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int x, y;
+    int result_x, result_y; // 用於儲存 scanf 的返回值
+ 
+    // 獲取第一個整數
+    printf("輸入第一個整數：");
+    result_x = scanf("%d", &amp;x);
+    if (result_x != 1) {
+        printf("錯誤：請輸入整數。\n");
+        return 1;
+    }
+ 
+    // 獲取第二個整數
+    printf("輸入第二個整數：");
+    result_y = scanf("%d", &amp;y);
+    if (result_y != 1) {
+        printf("錯誤：請輸入整數。\n");
+        return 1;
+    }
+ 
+    // 計算並輸出它們的乘積
+    printf("這兩個整數的乘積 = %d\n", x * y);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="260" src="./../images/螢幕擷取畫面 2023-12-27 175838.jpg" width="500"/></p>
+<br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
